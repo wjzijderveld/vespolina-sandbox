@@ -45,6 +45,7 @@
         "vespolina/ecommerce-flows-bundle": "*",
         "vespolina/fulfillment-bundle": "*",
         "vespolina/inventory-bundle": "*",
+        "vespolina/invoice-bundle": "*",
         "vespolina/order-bundle": "*",
         "vespolina/merchandise-bundle": "*",
         "vespolina/monetary-bundle": "*",
@@ -67,7 +68,7 @@
                     "reference": "master"
                 }
             }
-        } ], 
+        } ],
     "scripts": {
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
