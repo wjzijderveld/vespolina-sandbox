@@ -32,6 +32,7 @@
         "knplabs/knp-menu-bundle": "dev-master",
         "knplabs/knp-paginator-bundle": "*",
         "imagine/Imagine": "dev-master",
+        "jms/di-extra-bundle": "1.2.*",
         "jms/security-extra-bundle": "dev-master",
         "jms/serializer-bundle": "dev-master",
         "mopa/bootstrap-bundle": "dev-master",
