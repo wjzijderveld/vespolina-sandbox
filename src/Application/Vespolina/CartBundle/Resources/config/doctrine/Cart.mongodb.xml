@@ -7,9 +7,8 @@
     <document name="Application\Vespolina\CartBundle\Document\Cart" collection="vespolina_cart">
         <field name="id" id="true" />
 
-        <embed-many fieldName="items"
-                    field="items"
-                    targetDocument="Application\Vespolina\CartBundle\Document\CartItem"
+        <embed-many field="items"
+                    target-document="Application\Vespolina\CartBundle\Document\CartItem"
         />
 
     </document>
