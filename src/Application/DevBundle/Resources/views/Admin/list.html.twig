@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Product list</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.slug }}</td>
+                <td>{{ product.createdAt.format('Y-m-d H:i') }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

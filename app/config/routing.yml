@@ -1,3 +1,8 @@
+application_dev:
+    resource: "@ApplicationDevBundle/Controller/"
+    type:     annotation
+    prefix:   /dev
+
 
 vespolina_store:
     resource: "@VespolinaStoreBundle/Resources/config/routing/store.xml"
