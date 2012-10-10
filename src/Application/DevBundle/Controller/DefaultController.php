@@ -14,17 +14,7 @@ class DefaultController extends Controller
      */
     public function categoryAction()
     {
-        /** @var $taxManager \Vespolina\TaxonomyBundle\Document\TaxonomyManager */
-        $taxManager = $this->get('vespolina.taxonomy_manager');
 
-        $taxonomy = $taxManager->findBy(array('name' => 'products'));
-        $taxManager->deleteTaxonomy($taxonomy);
-
-        $taxonomy = $taxManager->createTaxonomy('products', 'tags');
-        $taxonomy->addTerm($taxManager->createTerm('Nature'));
-        $taxonomy->addTerm($taxManager->createTerm('Animals'));
-        $taxonomy->addTerm($taxManager->createTerm('People'));
-        $taxManager->updateTaxonomy($taxonomy);
 
         return new Response("Recreated category taxonomy");
     }

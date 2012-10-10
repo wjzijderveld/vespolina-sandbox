@@ -36,7 +36,19 @@ class AdminController extends Controller
      */
     public function createAction(Request $request)
     {
+        /** @var $manager \Vespolina\ProductBundle\Document\ProductManager */
+        $manager = $this->get('vespolina.product_manager');
+        $product = $manager->createProduct();
 
+        $formBuilder = $this->createFormBuilder($product);
+        $formBuilder
+            ->add('name')
+            ->add('slug')
+//            ->add('features')
+        ;
+
+        $form = $formBuilder->getForm();
+        return $this->render('ApplicationDevBundle:Admin:create.html.twig', array('form' => $form->createView()));
     }
 
     /**
