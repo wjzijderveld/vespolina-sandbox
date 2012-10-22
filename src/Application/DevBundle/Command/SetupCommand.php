@@ -12,6 +12,7 @@
 namespace Application\DevBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputOption;
 use Sensio\Bundle\GeneratorBundle\Command\Helper\DialogHelper;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputInterface;
@@ -22,6 +23,10 @@ class SetupCommand extends ContainerAwareCommand
     {
         $this
             ->setName('dev:rebuild')
+            ->addOption('all', 'a', InputOption::VALUE_NONE, 'Rebuild all')
+            ->addOption('taxonomy', null, InputOption::VALUE_NONE, 'Rebuild Taxonomy')
+            ->addOption('products', null, InputOption::VALUE_NONE, 'Rebuild Products')
+            ->addOption('store', null, InputOption::VALUE_NONE, 'Rebuild Store')
             ->setDescription('Reinstalls the complete shop')
         ;
     }
@@ -35,14 +40,37 @@ class SetupCommand extends ContainerAwareCommand
         // Drop old data
         $this->dropDatabase($input, $output);
 
-        // Generate new data
-        $output->writeln($this->getHelper('formatter')->formatSection('Taxonomy', 'Creating '));
-        $this->buildTaxonomy($input, $output);
-        $this->buildProducts($input, $output);
+        if ($input->getOption('store') || $input->getOption('all')) {
+            $this->buildStore($input, $output);
+        }
+
+        if ($input->getOption('taxonomy') || $input->getOption('all')) {
+            $this->buildTaxonomy($input, $output);
+        }
+
+        if ($input->getOption('products') || $input->getOption('all')) {
+            $this->buildProducts($input, $output);
+        }
+    }
+
+    protected function buildStore(InputInterface $input, OutputInterface $output)
+    {
+        /** @var $storeManager \Vespolina\StoreBundle\Document\StoreManager */
+        $storeManager = $this->getContainer()->get('vespolina.store_manager');
+
+        /** @var $store \Vespolina\StoreBundle\Document\Store */
+        $store = $storeManager->createStore('default_store', 'Willem-Jan.net');
+
+        $storeManager->updateStore($store);
+
+        $output->writeln(sprintf('<info>Created "default_store"</info>'));
     }
 
     protected function buildTaxonomy(InputInterface $input, OutputInterface $output)
     {
+        // Generate new data
+        $output->writeln($this->getHelper('formatter')->formatSection('Taxonomy', 'Creating '));
+
         /** @var $taxManager \Vespolina\TaxonomyBundle\Document\TaxonomyManager */
         $taxManager = $this->getContainer()->get('vespolina.taxonomy_manager');
 
@@ -67,12 +95,12 @@ class SetupCommand extends ContainerAwareCommand
         }
 
         $features = array();
-        $feature = new \Vespolina\ProductBundle\Document\Feature();
+        $feature = new \Vespolina\ProductBundle\Document\Attribute();
         $feature->setName('pixel_width');
         $feature->setType('integer');
         $features[] = $feature;
 
-        $feature = new \Vespolina\ProductBundle\Document\Feature();
+        $feature = new \Vespolina\ProductBundle\Document\Attribute();
         $feature->setName('pixel_height');
         $feature->setType('integer');
         $features[] = $feature;
@@ -81,7 +109,7 @@ class SetupCommand extends ContainerAwareCommand
         $product = $productManager->createProduct();
         $product->setName('Rabbit from Blijdorp Zoo');
         $product->setSlug('rabbit-from-blijdorp-zoo');
-        $product->setFeatures($features);
+        $product->setAttributes($features);
 
         $productManager->updateProduct($product);
 

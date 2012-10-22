@@ -50,6 +50,7 @@
         "vespolina/cart-bundle": "*",
         "vespolina/checkout-bundle": "*",
         "vespolina/core": "*",
+        "vespolina/taxonomy": "*",
         "vespolina/ecommerce-flows-bundle": "*",
         "vespolina/fulfillment-bundle": "*",
         "vespolina/inventory-bundle": "*",
@@ -218,6 +219,21 @@
                     "psr-0": { "Vespolina\\Symfony2Bundle": "" }
                 },
                 "target-dir": "Vespolina/Symfony2Bundle"
+            }
+        },
+        {
+            "type": "package",
+            "package":{
+                "version": "dev-master",
+                "name": "vespolina/taxonomy",
+                "source":{
+                    "url": "git://github.com/iampersistent/VespolinaTaxonomy.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "Vespolina": "lib/" }
+                }
             }
         }
     ],
