@@ -62,6 +62,8 @@ vespolina_store:
 #            class: Vespolina\StoreBundle\Handler\StandardStoreHandler
 vespolina_cart:
     db_driver: mongodb
+    pricing_provider:
+        class:
 
 vespolina_checkout:
     db_driver: orm

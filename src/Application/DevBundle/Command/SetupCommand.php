@@ -105,13 +105,27 @@ class SetupCommand extends ContainerAwareCommand
         $feature->setType('integer');
         $features[] = $feature;
 
-        /** @var $product \Vespolina\Entity\ProductInterface */
-        $product = $productManager->createProduct();
-        $product->setName('Rabbit from Blijdorp Zoo');
-        $product->setSlug('rabbit-from-blijdorp-zoo');
-        $product->setAttributes($features);
+        $names = array(
+            'Day at Blijdorp',
+            'Happy walking',
+            'Shooting polarbears',
+            'Skating on water',
+            'Walking in the woods',
+            'Feeding cows',
+            'Crafting wooden shoes',
+            'Models are hard',
+            'Coding like crazy',
+        );
 
-        $productManager->updateProduct($product);
+        for ($i = 0; $i < 9; $i++) {
+            /** @var $product \Vespolina\Entity\ProductInterface */
+            $product = $productManager->createProduct();
+            $product->setName($names[$i]);
+            $product->setSlug(preg_replace('/[^a-zA-Z0-9\-]/', '-', strtolower($names[$i])));
+            $product->setAttributes($features);
+
+            $productManager->updateProduct($product);
+        }
 
         $output->writeln('<comment>Created single product with 2 features</comment>');
     }

@@ -17,7 +17,7 @@ framework:
     default_locale:  %locale%
     session:
         lifetime:       3600
-        name:           symfony
+        name:           "wj-shop"
 
 # Twig Configuration
 twig:

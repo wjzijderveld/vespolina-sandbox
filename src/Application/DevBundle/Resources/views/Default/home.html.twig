@@ -1,0 +1,21 @@
+{% extends 'ApplicationDevBundle::layout.html.twig' %}
+
+{% block title %}
+Home | {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1>Beta</h1>
+    <div class="row-fluid">
+        <div class="row-fluid product-grid">
+            {% for product in products %}
+                <div class="product">
+                    <strong>{{ product.name }}</strong>
+                    {{ product.slug }}
+                    <a class="btn" href="{{ path('vespolina_cart_add_product', {'productId': product.id}) }}">Add to Cart</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
