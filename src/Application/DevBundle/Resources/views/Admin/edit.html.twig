@@ -1,0 +1,23 @@
+{% extends 'ApplicationDevBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Edit product</h1>
+    <form method="post" action="{{ path('application_dev_admin_edit', {'productId' : product.id}) }}" {{ form_enctype(form) }}>
+        {{ form_row(form) }}
+        <a href="#" id="add-attribute">Add</a>
+        <input type="submit" value="Save" />
+        <script type="text/javascript">
+            $('#add-attribute').click(function(){
+                var id,
+                    prototype;
+
+                prototype = $('#application_dev_form_product_images_control_group').data('prototype');
+                id = $('.collection-item').children().length;
+                console.log(id);
+                prototype = prototype.replace(/__name__/g, id);
+                console.log(prototype);
+                $(prototype).appendTo($('.collection-item'));
+            });
+        </script>
+    </form>
+{% endblock %}

@@ -1,6 +1,6 @@
-{% extends "::base.html.twig" %}
+{% extends 'ApplicationDevBundle::layout.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Product list</h1>
     <table>
         <thead>
@@ -15,6 +15,7 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.slug }}</td>
                 <td>{{ product.createdAt.format('Y-m-d H:i') }}</td>
+                <td><a href="{{ path('application_dev_admin_edit', { 'productId' : product.id }) }}">Edit</a></td>
             </tr>
         {% endfor %}
     </table>

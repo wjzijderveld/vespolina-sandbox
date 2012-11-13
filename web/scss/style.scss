@@ -1,0 +1,59 @@
+body {
+  background: url(../images/pinstriped_suit.png);
+  color: #DEDEDE;
+}
+
+header {
+  height: 200px;
+  color: #FFF;
+  position: relative;
+}
+
+header .title {
+  color: #FFF;
+  font-size: 2.5em;
+  font-weight: normal;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+
+.product-grid {
+  .product {
+    float: left;
+    width: 175px;
+    height: 200px;
+    padding: 20px;
+  }
+  h3 {
+    color: #DEDEDE;
+    text-align: right;
+    font-size: 1em;
+  }
+  .actions {
+    margin-top: 10px;
+    .btn {
+      float: right;
+    }
+  }
+}
+
+/* colors */
+body, h1, legend, label {
+  color: #DEDEDE;
+}
+
+#cart {
+  background: #FFF;
+  padding: 25px;
+  padding-bottom: 150px;
+  position: relative;
+  .well {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+  h1, legend, label, td, tr {
+    color: #666;
+  }
+}

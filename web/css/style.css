@@ -1,3 +1,68 @@
-header { height: 200px; background: #d3d3d3; }
+/* line 1, ../scss/style.scss */
+body {
+  background: url(../images/pinstriped_suit.png);
+  color: #DEDEDE;
+}
 
-.product-grid .product { float:left; width: 194px; height: 200px; padding:20px; }
+/* line 6, ../scss/style.scss */
+header {
+  height: 200px;
+  color: #FFF;
+  position: relative;
+}
+
+/* line 12, ../scss/style.scss */
+header .title {
+  color: #FFF;
+  font-size: 2.5em;
+  font-weight: normal;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+
+/* line 22, ../scss/style.scss */
+.product-grid .product {
+  float: left;
+  width: 175px;
+  height: 200px;
+  padding: 20px;
+}
+/* line 28, ../scss/style.scss */
+.product-grid h3 {
+  color: #DEDEDE;
+  text-align: right;
+  font-size: 1em;
+}
+/* line 33, ../scss/style.scss */
+.product-grid .actions {
+  margin-top: 10px;
+}
+/* line 35, ../scss/style.scss */
+.product-grid .actions .btn {
+  float: right;
+}
+
+/* colors */
+/* line 42, ../scss/style.scss */
+body, h1, legend, label {
+  color: #DEDEDE;
+}
+
+/* line 46, ../scss/style.scss */
+#cart {
+  background: #FFF;
+  padding: 25px;
+  padding-bottom: 150px;
+  position: relative;
+}
+/* line 51, ../scss/style.scss */
+#cart .well {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+/* line 56, ../scss/style.scss */
+#cart h1, #cart legend, #cart label, #cart td, #cart tr {
+  color: #666;
+}

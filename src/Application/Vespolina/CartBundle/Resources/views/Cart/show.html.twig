@@ -1,4 +1,4 @@
-{% extends "VespolinaStoreBundle::layout.html.twig" %}
+{% extends "ApplicationDevBundle::layout.html.twig" %}
 
 {% block navigation %}
     <ul class="breadcrumb">
@@ -8,6 +8,8 @@
 {% endblock %}
 
 {% block content %}
-{% include "VespolinaCartBundle:Partials:cart.html.twig" with {'cart': cart} %}
+    <div id="cart">
+        {% include "VespolinaCartBundle:Partials:cart.html.twig" with {'cart': cart} %}
+    </div>
 {% endblock %}
 

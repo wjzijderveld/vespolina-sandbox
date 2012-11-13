@@ -63,7 +63,6 @@ vespolina_store:
 vespolina_cart:
     db_driver: mongodb
     pricing_provider:
-        class:
 
 vespolina_checkout:
     db_driver: orm
@@ -86,6 +85,7 @@ vespolina_product:
         identifiers:
             sku: Vespolina\ProductBundle\Document\SKUIdentifier
     product:
+        class: Application\DevBundle\Document\Product
         form:
             type:               Application\Vespolina\ProductBundle\Form\Type\ProductFormExtendedType #vespolina.product.form.type
 #            handler_service:    vespolina.product.form.handler

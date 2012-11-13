@@ -17,12 +17,17 @@ class DefaultController extends AbstractController
     public function homeAction()
     {
         $context = array('taxonomyTerm' => '_all');
+        /** @var $manager \Vespolina\ProductBundle\Document\ProductManager */
+        $manager = $this->container->get('vespolina.product.product_manager');
+
+        $products = $manager->findBy(array(), array('name' => 'ASC'));
+
         $storeHandler = $this->getStoreHandler();
         $storeZone = $storeHandler->resolveStoreZone($context);
 
         //Get products in this store zone as a doctrine query
-        $productsQuery = $storeHandler->getZoneProducts($storeZone, true, $context);
-        $products = $productsQuery->execute();
+//        $productsQuery = $storeHandler->getZoneProducts($storeZone, true, $context);
+//        $products = $productsQuery->execute();
 
         return $this->render('ApplicationDevBundle:Default:home.html.twig', array('products' => $products));
     }

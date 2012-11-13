@@ -31,7 +31,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ VespolinaStoreBundle]
+    bundles:        [ VespolinaAdminBundle, ApplicationDevBundle, VespolinaStoreBundle]
     java:           %java_path%
     filters:
         cssrewrite: ~
@@ -105,6 +105,7 @@ doctrine_mongodb:
                 VespolinaTaxationBundle: ~
                 VespolinaTaxonomyBundle: ~
                 UserBundle: ~
+                ApplicationDevBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -147,3 +148,9 @@ mopa_bootstrap:
 sensio_framework_extra:
     view:
         annotations: false
+
+avalanche_imagine:
+    filters:
+        grid_medium:
+            type: thumbnail
+            options: { size: [175,100], mode: outbound }

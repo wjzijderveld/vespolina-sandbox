@@ -60,6 +60,8 @@ class SetupCommand extends ContainerAwareCommand
 
         /** @var $store \Vespolina\StoreBundle\Document\Store */
         $store = $storeManager->createStore('default_store', 'Willem-Jan.net');
+        $store->setDefaultCurrency('EUR');
+        $store->setTaxationEnabled(true);
 
         $storeManager->updateStore($store);
 
@@ -89,9 +91,11 @@ class SetupCommand extends ContainerAwareCommand
         $taxManager = $this->getContainer()->get('vespolina.taxonomy_manager');
         /** @var $productManager \Vespolina\ProductBundle\Document\ProductManager */
         $productManager = $this->getContainer()->get('vespolina.product_manager');
-        $product = $productManager->findProductBySlug('rabbit-from-blijdorp-zoo');
-        if ($product) {
-            $productManager->deleteProduct($product);
+        $products = $productManager->findBy(array());
+        if ($products) {
+            foreach ($products as $product) {
+                $productManager->deleteProduct($product);
+            }
         }
 
         $features = array();
@@ -118,16 +122,31 @@ class SetupCommand extends ContainerAwareCommand
         );
 
         for ($i = 0; $i < 9; $i++) {
-            /** @var $product \Vespolina\Entity\ProductInterface */
+            /** @var $product \Vespolina\Entity\Product\ProductInterface */
             $product = $productManager->createProduct();
+            $pricing = $this->generateRandomPricing();
             $product->setName($names[$i]);
             $product->setSlug(preg_replace('/[^a-zA-Z0-9\-]/', '-', strtolower($names[$i])));
             $product->setAttributes($features);
+            $product->setPricing($pricing);
+            $product->setType('default');
 
             $productManager->updateProduct($product);
         }
 
-        $output->writeln('<comment>Created single product with 2 features</comment>');
+        $output->writeln('<comment>Created 9 products with 2 features and pricing</comment>');
+    }
+
+    private function generateRandomPricing()
+    {
+        $pricing = array();
+        $pricing['netUnitPrice']    = rand(2,40);
+        $pricing['unitPriceMSRP']   = rand(2,40);
+        $pricing['unitPriceTax']    = rand(2,40);
+        $pricing['unitPriceTotal']  = rand(2,40);
+        $pricing['unitMSRPTotal']   = rand(2,40);
+
+        return $pricing;
     }
 
     private function dropDatabase(InputInterface $input, OutputInterface $output)

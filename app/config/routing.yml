@@ -3,7 +3,6 @@ application_dev:
     type:     annotation
     prefix:   /dev
 
-
 vespolina_store:
     resource: "@VespolinaStoreBundle/Resources/config/routing/store.xml"
     prefix:   /
@@ -33,6 +32,10 @@ fos_user_security:
 vespolina_admin:
     resource: @VespolinaAdminBundle/Resources/config/routing/admin.xml
     prefix:   /admin/
+
+_imagine:
+    resource: .
+    type: imagine
 
 _vespolina_product_admin:
     resource: @VespolinaProductBundle/Resources/config/routing/admin.xml

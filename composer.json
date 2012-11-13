@@ -1,23 +1,209 @@
 {
-    "name": "vespolina/vespolina-sandbox",
-    "type": "symfony-bundle",
-    "description": "Vespolina sandbox.",
-    "keywords":["shop", "ecommerce", "cart", "item"],
-    "homepage": "http://vespolina-project.org",
-    "license": "MIT",
-    "authors":[
+    "authors": [
         {
-            "name": "Vespolina Team",
-            "homepage": "http://vespolina-project.org"
+            "homepage": "http://vespolina-project.org",
+            "name": "Vespolina Team"
         }
     ],
-    "autoload":{
-        "psr-0":{
+    "autoload": {
+        "psr-0":         {
             "": "src/"
         }
     },
-    "require":{
-        "php": ">=5.3.2",
+    "config": {
+        "bin-dir": "bin"
+    },
+    "description": "Vespolina sandbox.",
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    },
+    "homepage": "http://vespolina-project.org",
+    "keywords": [
+"shop",
+"ecommerce",
+"cart",
+"item"
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "name": "vespolina/vespolina-sandbox",
+    "repositories": [
+        {
+            "package":             {
+                "name": "twitter/bootstrap",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "https://github.com/twitter/bootstrap.git"
+                },
+                "version": "master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina": "lib/"
+                    }
+                },
+                "name": "vespolina/core",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaCore.git"
+                },
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina": "lib/"
+                    }
+                },
+                "name": "vespolina/cart",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaCart.git"
+                },
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina": "lib/"
+                    }
+                },
+                "name": "vespolina/product",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaProduct.git"
+                },
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina\\CartBundle": ""
+                    }
+                },
+                "name": "vespolina/cart-bundle",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaCartBundle.git"
+                },
+                "target-dir": "Vespolina/CartBundle",
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina\\OrderBundle": ""
+                    }
+                },
+                "name": "vespolina/order-bundle",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaOrderBundle.git"
+                },
+                "target-dir": "Vespolina/OrderBundle",
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina\\ProductBundle": ""
+                    }
+                },
+                "name": "vespolina/product-bundle",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaProductBundle.git"
+                },
+                "target-dir": "Vespolina/ProductBundle",
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina\\StoreBundle": ""
+                    }
+                },
+                "name": "vespolina/store-bundle",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaStoreBundle.git"
+                },
+                "target-dir": "Vespolina/StoreBundle",
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "type": "package",
+            "package":{
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina\\Symfony2Bundle": ""
+                    }
+                },
+                "version": "dev-master",
+                "name": "vespolina/symfony2-bundle",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaSymfony2Bundle.git"
+                },
+                "target-dir": "Vespolina/Symfony2Bundle",
+                "version": "dev-master"
+            },
+            "type": "package"
+        },
+        {
+            "package":             {
+                "autoload":                 {
+                    "psr-0":                     {
+                        "Vespolina": "lib/"
+                    }
+                },
+                "name": "vespolina/taxonomy",
+                "source":                 {
+                    "reference": "master",
+                    "type": "git",
+                    "url": "git://github.com/iampersistent/VespolinaTaxonomy.git"
+                },
+                "version": "dev-master"
+            },
+            "type": "package"
+        }
+    ],
+    "require": {
+        "avalanche123/imagine-bundle": "dev-master",
         "doctrine/common": ">=2.2.0,<2.2.99",
         "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-bundle": "dev-master",
@@ -29,13 +215,14 @@
         "friendsofsymfony/rest": "dev-master",
         "friendsofsymfony/rest-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
-        "knplabs/knp-menu-bundle": "dev-master",
-        "knplabs/knp-paginator-bundle": "*",
         "imagine/Imagine": "dev-master",
         "jms/di-extra-bundle": "1.2.*",
         "jms/security-extra-bundle": "dev-master",
-        "jms/serializer-bundle": "dev-master",
+        "jms/serializer-bundle": "0.9.*",
+        "knplabs/knp-menu-bundle": "dev-master",
+        "knplabs/knp-paginator-bundle": "*",
         "mopa/bootstrap-bundle": "dev-master",
+        "php": ">=5.3.2",
         "sensio/distribution-bundle": "2.1.*",
         "sensio/framework-extra-bundle": "2.1.*",
         "sensio/generator-bundle": "2.1.*",
@@ -50,12 +237,11 @@
         "vespolina/cart-bundle": "*",
         "vespolina/checkout-bundle": "*",
         "vespolina/core": "*",
-        "vespolina/taxonomy": "*",
         "vespolina/ecommerce-flows-bundle": "*",
         "vespolina/fulfillment-bundle": "*",
         "vespolina/inventory-bundle": "*",
-        "vespolina/order-bundle": "*",
         "vespolina/monetary-bundle": "*",
+        "vespolina/order-bundle": "*",
         "vespolina/partner-bundle": "*",
         "vespolina/pricing-bundle": "*",
         "vespolina/product": "*",
@@ -64,196 +250,20 @@
         "vespolina/symfony2-bundle": "*",
         "vespolina/taxation-bundle": "*",
         "vespolina/taxonomy": "*",
+        "vespolina/taxonomy": "*",
         "vespolina/taxonomy-bundle": "*"
     },
-    "minimum-stability": "dev",
-    "repositories":[
-        {
-            "type": "package",
-            "package":{
-                "version": "master",
-                "name": "twitter/bootstrap",
-                "source":{
-                    "url": "https://github.com/twitter/bootstrap.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/core",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaCore.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina": "lib/" }
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/cart",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaCart.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina": "lib/" }
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/product",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaProduct.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina": "lib/" }
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/cart-bundle",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaCartBundle.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina\\CartBundle": "" }
-                },
-                "target-dir": "Vespolina/CartBundle"
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/order-bundle",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaOrderBundle.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina\\OrderBundle": "" }
-                },
-                "target-dir": "Vespolina/OrderBundle"
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/product-bundle",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaProductBundle.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina\\ProductBundle": "" }
-                },
-                "target-dir": "Vespolina/ProductBundle"
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/store-bundle",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaStoreBundle.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina\\StoreBundle": "" }
-                },
-                "target-dir": "Vespolina/StoreBundle"
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/taxonomy-bundle",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaTaxonomyBundle.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina\\TaxonomyBundle": "" }
-                },
-                "target-dir": "Vespolina/TaxonomyBundle"
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/symfony2-bundle",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaSymfony2Bundle.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina\\Symfony2Bundle": "" }
-                },
-                "target-dir": "Vespolina/Symfony2Bundle"
-            }
-        },
-        {
-            "type": "package",
-            "package":{
-                "version": "dev-master",
-                "name": "vespolina/taxonomy",
-                "source":{
-                    "url": "git://github.com/iampersistent/VespolinaTaxonomy.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0": { "Vespolina": "lib/" }
-                }
-            }
-        }
+    "scripts": {
+        "post-install-cmd": [
+"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
     ],
-    "scripts":{
-        "post-install-cmd":[
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
-        ],
-        "post-update-cmd":[
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
-        ]
+        "post-update-cmd": [
+"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+    ]
     },
-    "config":{
-        "bin-dir": "bin"
-    },
-    "extra":{
-        "symfony-app-dir": "app",
-        "symfony-web-dir": "web"
-    }
+    "type": "symfony-bundle"
 }

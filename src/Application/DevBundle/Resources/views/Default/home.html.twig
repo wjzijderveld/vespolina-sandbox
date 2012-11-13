@@ -9,11 +9,7 @@ Home | {{ parent() }}
     <div class="row-fluid">
         <div class="row-fluid product-grid">
             {% for product in products %}
-                <div class="product">
-                    <strong>{{ product.name }}</strong>
-                    {{ product.slug }}
-                    <a class="btn" href="{{ path('vespolina_cart_add_product', {'productId': product.id}) }}">Add to Cart</a>
-                </div>
+                {% include('ApplicationDevBundle:Product:grid-item.html.twig') %}
             {% endfor %}
         </div>
     </div>
