@@ -1,0 +1,14 @@
+web1:
+    name: shop-willemjan-net
+    shared_writable_dirs:
+        - web/uploads
+        - web/media/cache
+        - app/cache
+        - app/logs
+    document_root: web
+    php_version: 5.3
+    php_extensions:
+        - gd
+        - mysql
+        - mongodb
+        - intl
