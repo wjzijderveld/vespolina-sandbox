@@ -98,7 +98,7 @@ class Asset extends BaseAsset
     /**
      * @return string
      */
-    protected function getUploadRootDir()
+    public function getUploadRootDir()
     {
         // todo fix this... http://symfony.com/doc/current/cookbook/doctrine/file_uploads.html says it like this, but this just sucks
         return __DIR__ . '/../../../../web/' . $this->getUploadDir();

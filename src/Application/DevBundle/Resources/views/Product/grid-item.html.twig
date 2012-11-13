@@ -1,10 +1,12 @@
 <div class="product">
     <h3>{{ product.name }}</h3>
-    {% if product.getFirstImage() %}
-        <img src="{{ product.getFirstImage().getWebPath() | apply_filter('grid_medium') }}" alt="" />
-    {% else %}
-        <img src="{{ asset('images/missing-image.png') }}" />
-    {% endif %}
+    <a href="{{ path('application_dev_default_show', { 'productId' : product.id }) }}">
+        {% if product.getFirstImage() %}
+            <img src="{{ product.getFirstImage().getWebPath() | apply_filter('grid_medium') }}" alt="" />
+        {% else %}
+            <img src="{{ asset('images/missing-image.png') }}" />
+        {% endif %}
+    </a>
     <div class="actions clearfix">
         <a class="btn" href="{{ path('vespolina_cart_add_product', {'productId': product.id}) }}">Add to Cart</a>
     </div>

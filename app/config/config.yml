@@ -153,4 +153,13 @@ avalanche_imagine:
     filters:
         grid_medium:
             type: thumbnail
-            options: { size: [175,100], mode: outbound }
+            options: { size: [180,120], mode: outbound }
+        show_medium:
+            type: thumbnail
+            options: { size: [450,300], mode: inset }
+        show_large:
+            type: thumbnail
+            options: { size: [750,500], mode: inset }
+        show_thumbnail:
+            type: thumbnail
+            options: { size: [150,100], mode: outbound }

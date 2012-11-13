@@ -9,14 +9,15 @@
         <script type="text/javascript">
             $('#add-attribute').click(function(){
                 var id,
-                    prototype;
+                    prototype,
+                    ImageContainer = $('#application_dev_form_product_images_control_group');
 
-                prototype = $('#application_dev_form_product_images_control_group').data('prototype');
+                prototype = ImageContainer.data('prototype');
                 id = $('.collection-item').children().length;
                 console.log(id);
                 prototype = prototype.replace(/__name__/g, id);
                 console.log(prototype);
-                $(prototype).appendTo($('.collection-item'));
+                $(prototype).appendTo(ImageContainer);
             });
         </script>
     </form>

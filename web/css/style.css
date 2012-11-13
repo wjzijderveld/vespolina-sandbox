@@ -53,7 +53,7 @@ body, h1, legend, label {
 #cart {
   background: #FFF;
   padding: 25px;
-  padding-bottom: 150px;
+  padding-bottom: 175px;
   position: relative;
 }
 /* line 51, ../scss/style.scss */
@@ -65,4 +65,28 @@ body, h1, legend, label {
 /* line 56, ../scss/style.scss */
 #cart h1, #cart legend, #cart label, #cart td, #cart tr {
   color: #666;
+}
+
+/* line 61, ../scss/style.scss */
+#galleria {
+  margin-bottom: 20px;
+}
+
+/* line 65, ../scss/style.scss */
+.sharebox {
+  padding: 15px;
+  width: 32px;
+  background: #EFEFEF;
+  border-radius: 10px;
+}
+/* line 70, ../scss/style.scss */
+.sharebox a {
+  height: 32px;
+  width: 32px;
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 75, ../scss/style.scss */
+.sharebox a.addthis_button_compact {
+  margin-bottom: 0;
 }

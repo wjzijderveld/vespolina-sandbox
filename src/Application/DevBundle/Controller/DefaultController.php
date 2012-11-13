@@ -20,7 +20,7 @@ class DefaultController extends AbstractController
         /** @var $manager \Vespolina\ProductBundle\Document\ProductManager */
         $manager = $this->container->get('vespolina.product.product_manager');
 
-        $products = $manager->findBy(array(), array('name' => 'ASC'));
+        $products = $manager->findBy(array(), array('_id' => 'ASC'));
 
         $storeHandler = $this->getStoreHandler();
         $storeZone = $storeHandler->resolveStoreZone($context);
@@ -35,6 +35,24 @@ class DefaultController extends AbstractController
     public function listAction()
     {
 
+    }
+
+    /**
+     * @Route("/show/{productId}")
+     * @param $productId
+     */
+    public function showAction($productId)
+    {
+        /** @var $manager \Vespolina\ProductBundle\Document\ProductManager */
+        $manager = $this->container->get('vespolina.product.product_manager');
+
+        $product = $manager->findProductById($productId);
+
+        if (!$product) {
+            return new \Symfony\Component\HttpFoundation\RedirectResponse($this->container->get('router')->generate('application_dev_default_home'));
+        }
+
+        return $this->render('ApplicationDevBundle:Product:show.html.twig', array('product' => $product));
     }
 
 }
