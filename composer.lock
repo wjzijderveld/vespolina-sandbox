@@ -1,5 +1,5 @@
 {
-    "hash": "66be1f83cad0b85c279d1352993d2216",
+    "hash": "8e4e0bbe24e8a103ed4323165d135a56",
     "packages": [
         {
             "name": "avalanche123/imagine-bundle",
@@ -1963,12 +1963,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "d55d3b823d9256bb1649ae3ef8025f2424faa3ae"
+                "reference": "2d488b79f2e46bfff057c73081a8e5c426b712a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/d55d3b823d9256bb1649ae3ef8025f2424faa3ae.zip",
-                "reference": "d55d3b823d9256bb1649ae3ef8025f2424faa3ae",
+                "url": "https://github.com/symfony/symfony/archive/2d488b79f2e46bfff057c73081a8e5c426b712a7.zip",
+                "reference": "2d488b79f2e46bfff057c73081a8e5c426b712a7",
                 "shasum": ""
             },
             "require": {
@@ -2017,7 +2017,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1352713810",
+            "time": "1352824146",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2224,7 +2224,7 @@
                     "Vespolina": "lib/"
                 }
             },
-            "time": "1346351741"
+            "time": "1352001672"
         },
         {
             "name": "vespolina/cart-bundle",
@@ -2309,8 +2309,7 @@
                 "psr-0": {
                     "Vespolina": "lib/"
                 }
-            },
-            "time": "1351112685"
+            }
         },
         {
             "name": "vespolina/ecommerce-flows-bundle",
@@ -2825,60 +2824,13 @@
             ]
         }
     ],
-    "packages-dev": [
-        {
-            "name": "jdorn/sql-formatter",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/jdorn/sql-formatter.git",
-                "reference": "v1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/jdorn/sql-formatter/archive/v1.0.1.zip",
-                "reference": "v1.0.1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "time": "2012-10-04 22:10:16",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "classmap": [
-                    "lib"
-                ]
-            },
-            "license": [
-                "LGPL"
-            ],
-            "authors": [
-                {
-                    "name": "Jeremy Dorn",
-                    "email": "jeremy@jeremydorn.com",
-                    "homepage": "http://jeremydorn.com/"
-                }
-            ],
-            "description": "a PHP SQL highlighting library",
-            "homepage": "https://github.com/jdorn/sql-formatter/",
-            "keywords": [
-                "sql",
-                "highlight"
-            ]
-        }
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "avalanche123/imagine-bundle": 20,
         "doctrine/data-fixtures": 20,
         "doctrine/doctrine-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
@@ -2888,14 +2840,13 @@
         "friendsofsymfony/rest": 20,
         "friendsofsymfony/rest-bundle": 20,
         "friendsofsymfony/user-bundle": 20,
-        "knplabs/knp-menu-bundle": 20,
         "imagine/imagine": 20,
         "jms/security-extra-bundle": 20,
+        "knplabs/knp-menu-bundle": 20,
         "mopa/bootstrap-bundle": 20,
         "symfony/assetic-bundle": 20,
         "symfony/monolog-bundle": 20,
         "symfony/swiftmailer-bundle": 20,
-        "twig/extensions": 20,
-        "avalanche123/imagine-bundle": 20
+        "twig/extensions": 20
     }
 }
