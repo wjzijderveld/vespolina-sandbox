@@ -8,6 +8,7 @@
         {% endif %}
     </a>
     <div class="actions clearfix">
-        <a class="btn" href="{{ path('vespolina_cart_add_product', {'productId': product.id}) }}">Add to Cart</a>
+        {{ product.getPricing()['netUnitPrice'] | price_format(store.defaultCurrency) }}
+        <a class="btn pull-right" href="{{ path('vespolina_cart_add_product', {'productId': product.id}) }}">Add to Cart</a>
     </div>
 </div>

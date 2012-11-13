@@ -4,10 +4,10 @@
 
     <h1>{{ product.name }}</h1>
     <div class="row-fluid">
-        <span class="span10">
-            <div id="galleria" style="height:650px;"></div>
+        <span class="span11">
+            <div id="galleria"></div>
         </span>
-        <span class="span2">
+        <span class="span1">
             <div class="sharebox">
                 <!-- AddThis Button BEGIN -->
                 <div class="addthis_toolbox addthis_32x32_style" style="left:50px;top:50px;">
@@ -23,12 +23,16 @@
         </span>
     </div>
     <div class="row-fluid">
-        <span class="span6">
+        <span class="span8">
             <p>{{ product.description }}</p>
         </span>
-        <span class="offset2">
-            <a class="btn btn-large" href="{{ path('vespolina_cart_add_product', { 'productId' : product.id }) }}">Add to basket</a>
+        <span class="span3">
+            <div class="cta">
+                {{ product.getPricing()['netUnitPrice'] | price_format(store.defaultCurrency) }}
+                <a class="btn btn-large pull-right" href="{{ path('vespolina_cart_add_product', { 'productId' : product.id }) }}">Add to basket</a>
+            </div>
         </span>
+        <span class="1">&nbsp;</span>
     </div>
     <script type="text/javascript" src="{{ asset('bundles/applicationdev/js/galleria/galleria-1.2.8.min.js') }}"></script>
     <script type="text/javascript">

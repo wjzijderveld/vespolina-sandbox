@@ -1,17 +1,22 @@
-/* line 1, ../scss/style.scss */
+/* line 3, ../scss/style.scss */
 body {
   background: url(../images/pinstriped_suit.png);
-  color: #DEDEDE;
+  color: #565656;
 }
 
-/* line 6, ../scss/style.scss */
+/* line 8, ../scss/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #565656;
+}
+
+/* line 10, ../scss/style.scss */
 header {
-  height: 200px;
+  height: 125px;
   color: #FFF;
   position: relative;
 }
 
-/* line 12, ../scss/style.scss */
+/* line 16, ../scss/style.scss */
 header .title {
   color: #FFF;
   font-size: 2.5em;
@@ -21,72 +26,109 @@ header .title {
   left: 10px;
 }
 
-/* line 22, ../scss/style.scss */
+/* line 25, ../scss/style.scss */
+#content {
+  background: #DEDEDE;
+  padding: 20px;
+}
+
+/* line 31, ../scss/style.scss */
 .product-grid .product {
   float: left;
   width: 175px;
   height: 200px;
-  padding: 20px;
+  padding: 10px;
+  margin: 10px;
+  background: #EFEFEF;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
-/* line 28, ../scss/style.scss */
+/* line 40, ../scss/style.scss */
 .product-grid h3 {
-  color: #DEDEDE;
   text-align: right;
   font-size: 1em;
 }
-/* line 33, ../scss/style.scss */
+/* line 44, ../scss/style.scss */
 .product-grid .actions {
   margin-top: 10px;
 }
-/* line 35, ../scss/style.scss */
-.product-grid .actions .btn {
-  float: right;
-}
 
-/* colors */
-/* line 42, ../scss/style.scss */
-body, h1, legend, label {
-  color: #DEDEDE;
-}
-
-/* line 46, ../scss/style.scss */
+/* line 49, ../scss/style.scss */
 #cart {
-  background: #FFF;
-  padding: 25px;
+  background: #F2F2F2;
+  padding: 10px;
   padding-bottom: 175px;
   position: relative;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
-/* line 51, ../scss/style.scss */
+/* line 55, ../scss/style.scss */
 #cart .well {
   position: absolute;
   bottom: 25px;
   right: 25px;
 }
-/* line 56, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 #cart h1, #cart legend, #cart label, #cart td, #cart tr {
   color: #666;
 }
 
-/* line 61, ../scss/style.scss */
+/* line 65, ../scss/style.scss */
 #galleria {
   margin-bottom: 20px;
+  max-height: 600px;
+}
+@media (min-width: 800px) {
+  /* line 65, ../scss/style.scss */
+  #galleria {
+    min-height: 350px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 65, ../scss/style.scss */
+  #galleria {
+    min-height: 525px;
+  }
 }
 
-/* line 65, ../scss/style.scss */
+/* line 76, ../scss/style.scss */
 .sharebox {
   padding: 15px;
   width: 32px;
   background: #EFEFEF;
   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
-/* line 70, ../scss/style.scss */
+/* line 81, ../scss/style.scss */
 .sharebox a {
   height: 32px;
   width: 32px;
   display: block;
   margin-bottom: 10px;
 }
-/* line 75, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 .sharebox a.addthis_button_compact {
   margin-bottom: 0;
+}
+
+/* line 92, ../scss/style.scss */
+.cta {
+  font-size: 2em;
+  background: #EFEFEF;
+  padding: 15px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  height: 35px;
+  line-height: 35px;
+  position: relative;
+}
+/* line 100, ../scss/style.scss */
+.cta .btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }

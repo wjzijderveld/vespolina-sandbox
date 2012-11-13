@@ -5,12 +5,21 @@ Home | {{ parent() }}
 {% endblock %}
 
 {% block content %}
-    <h1>Beta</h1>
     <div class="row-fluid">
-        <div class="row-fluid product-grid">
-            {% for product in products %}
-                {% include('ApplicationDevBundle:Product:grid-item.html.twig') %}
-            {% endfor %}
+        <div class="row-fluid">
+            <div class="span9 product-grid">
+                {% for product in products %}
+                    {% include('ApplicationDevBundle:Product:grid-item.html.twig') %}
+                {% endfor %}
+            </div>
+            <div class="span1">
+                <h3>Latest photo's</h3>
+                <ul>
+                    <li>Photo 1</li>
+                    <li>Photo 2</li>
+                    <li>Photo 3</li>
+                </ul>
+            </div>
         </div>
     </div>
 {% endblock %}
